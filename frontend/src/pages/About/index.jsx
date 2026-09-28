@@ -1,9 +1,9 @@
-import { CheckCircle2, Building2 } from "lucide-react";
+import { CheckCircle2, Building2, Instagram, Linkedin } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
 import { Button } from "@/components/common/Button";
-import { ABOUT, FOUNDER } from "@/constants";
+import { ABOUT, FOUNDER, ASSETS, LEGAL } from "@/constants";
 
 export default function AboutPage() {
   return (
@@ -40,9 +40,9 @@ export default function AboutPage() {
           <div className="lg:col-span-4">
             <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm sticky top-28">
               <img
-                src="https://images.unsplash.com/photo-1723990720514-65968a7d517b?crop=entropy&cs=srgb&fm=jpg&q=85&w=800"
+                src={FOUNDER.photo}
                 alt={FOUNDER.name}
-                className="w-full h-[380px] object-cover"
+                className="w-full h-[380px] object-cover object-top"
               />
               <div className="p-5 bg-slate-900 text-white">
                 <div className="font-heading font-bold text-lg">{FOUNDER.name}</div>
@@ -73,12 +73,18 @@ export default function AboutPage() {
       {/* Organized by */}
       <section className="bg-slate-950 text-white py-16 sm:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Building2 className="h-10 w-10 text-[#F5A623] mx-auto" />
+          <img src={ASSETS.startupTimesLogo} alt="Startup Times" className="h-10 w-auto mx-auto" />
           <h2 className="mt-5 font-heading text-2xl sm:text-3xl font-bold">{ABOUT.organizedBy.heading}</h2>
           <p className="mt-4 text-slate-300 leading-relaxed">{ABOUT.organizedBy.body}</p>
-          <div className="mt-8">
-            <Button href="https://startuptimes.in" variant="ghostLight" data-testid="visit-startup-times-btn">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Button href={LEGAL.startupTimes.website} variant="ghostLight" data-testid="visit-startup-times-btn">
               Visit Startup Times
+            </Button>
+            <Button href={LEGAL.startupTimes.instagram} variant="ghostLight" data-testid="st-instagram-btn">
+              <Instagram className="h-4 w-4" /> Instagram
+            </Button>
+            <Button href={LEGAL.startupTimes.linkedin} variant="ghostLight" data-testid="st-linkedin-btn">
+              <Linkedin className="h-4 w-4" /> LinkedIn
             </Button>
           </div>
         </div>

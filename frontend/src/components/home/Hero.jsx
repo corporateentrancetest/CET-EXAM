@@ -37,7 +37,7 @@ export function Hero() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button to="/apply" size="lg" data-testid="hero-apply-btn">
-                Apply for Exam <ArrowRight className="h-4 w-4" />
+                Apply Now <ArrowRight className="h-4 w-4" />
               </Button>
               <Button to="/how-it-works" variant="ghostLight" size="lg" data-testid="hero-know-more-btn">
                 Know More

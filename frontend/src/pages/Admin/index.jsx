@@ -249,8 +249,8 @@ export default function AdminDashboardPage() {
                 ["CGPA", selected.academic?.cgpa],
               ]} />
               <DetailBlock title="Preferences" rows={[
-                ["Exam City", selected.preferences?.examCity],
-                ["Interview", selected.preferences?.interviewMode],
+                ["Exam Shift", selected.preferences?.examShift],
+                ["Interview", selected.preferences?.interviewMode || "Virtual"],
                 ["Interest", selected.preferences?.careerInterest],
               ]} />
               <DetailBlock title="Payment" rows={[

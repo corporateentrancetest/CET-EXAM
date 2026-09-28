@@ -8,7 +8,6 @@ import AboutPage from "@/pages/About";
 import HowItWorksPage from "@/pages/HowItWorks";
 import ProgramPage from "@/pages/Program";
 import DubaiExperiencePage from "@/pages/DubaiExperience";
-import EmployersPage from "@/pages/Employers";
 import FAQsPage from "@/pages/FAQs";
 import BlogPage from "@/pages/Blog";
 import ContactPage from "@/pages/Legal/Contact";
@@ -25,14 +24,12 @@ import AdminDashboardPage from "@/pages/Admin";
 export function AppRoutes() {
   return (
     <Routes>
-      {/* Public pages within the main layout */}
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/program" element={<ProgramPage />} />
         <Route path="/dubai-experience" element={<DubaiExperiencePage />} />
-        <Route path="/employers" element={<EmployersPage />} />
         <Route path="/faqs" element={<FAQsPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -42,12 +39,10 @@ export function AppRoutes() {
         <Route path="*" element={<NotFoundPage />} />
       </Route>
 
-      {/* Auth layout */}
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<LoginPage />} />
       </Route>
 
-      {/* Full-screen flows */}
       <Route path="/apply" element={<ApplyForExamPage />} />
       <Route
         path="/dashboard"

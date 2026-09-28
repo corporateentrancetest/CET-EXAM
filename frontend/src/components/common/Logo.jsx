@@ -1,21 +1,23 @@
-import { GraduationCap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-/** CET wordmark/logo lockup. */
+/** CET brand wordmark — bold navy/white "CET" with the amber flag accent. */
 export function Logo({ dark = true, className }) {
+  const textColor = dark ? "text-white" : "text-slate-900";
+  const subColor = dark ? "text-slate-300" : "text-slate-500";
   return (
     <div className={cn("flex items-center gap-2.5", className)}>
-      <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#F5A623] text-slate-950">
-        <GraduationCap className="h-5 w-5" strokeWidth={2.4} />
-      </div>
-      <div className="leading-none">
-        <div className={cn("font-heading font-extrabold tracking-tight text-lg", dark ? "text-white" : "text-slate-900")}>
+      <div className="relative">
+        <span className={cn("font-heading text-[26px] font-extrabold tracking-tight leading-none", textColor)}>
           CET
-        </div>
-        <div className={cn("text-[9px] font-semibold uppercase tracking-[0.18em]", dark ? "text-slate-400" : "text-slate-500")}>
-          Corporate Entrance Test
-        </div>
+        </span>
+        <span className="absolute -top-1.5 -right-2.5 h-0 w-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[12px] border-t-[#F5A623] rotate-[15deg]" />
       </div>
+      <span className={cn("hidden sm:block h-8 w-px", dark ? "bg-white/25" : "bg-slate-300")} />
+      <span className={cn("hidden sm:block text-[9px] font-extrabold uppercase tracking-[0.15em] leading-[1.3]", subColor)}>
+        Corporate
+        <br />
+        Entrance Test
+      </span>
     </div>
   );
 }

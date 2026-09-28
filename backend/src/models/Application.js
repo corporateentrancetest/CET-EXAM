@@ -47,8 +47,9 @@ const applicationSchema = new mongoose.Schema(
 
     // Section: Exam / interview preference + career interest
     preferences: {
+      examShift: String,
       examCity: String,
-      interviewMode: String, // In-person (Delhi) / Virtual
+      interviewMode: { type: String, default: "Virtual" },
       careerInterest: String,
     },
 

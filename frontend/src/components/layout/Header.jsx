@@ -78,7 +78,7 @@ export function Header() {
                 </Button>
               )}
               <Button to="/apply" size="sm" data-testid="header-apply-btn">
-                Apply for Exam <ArrowRight className="h-4 w-4" />
+                Apply Now <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
 

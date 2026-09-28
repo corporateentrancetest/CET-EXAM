@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Instagram, Linkedin, Globe } from "lucide-react";
 import { Logo } from "@/components/common/Logo";
-import { NAV_LINKS, LEGAL } from "@/constants";
+import { NAV_LINKS, LEGAL, ASSETS } from "@/constants";
 
 const LEGAL_LINKS = [
   { label: "Contact Us", to: "/contact" },
@@ -21,7 +21,23 @@ export function Footer() {
               India's national Corporate Entrance Test — a transparent, merit-based bridge between
               Indian campuses and the corporate world.
             </p>
-            <p className="mt-4 text-xs text-slate-500">An initiative by {LEGAL.initiativeBy}.</p>
+            <div className="mt-5">
+              <div className="text-[11px] uppercase tracking-widest text-slate-500 mb-2">An initiative by</div>
+              <a href={LEGAL.startupTimes.website} target="_blank" rel="noreferrer" data-testid="footer-startup-times-logo">
+                <img src={ASSETS.startupTimesLogo} alt="Startup Times" className="h-7 w-auto" />
+              </a>
+            </div>
+            <div className="mt-5 flex items-center gap-3">
+              <a href={LEGAL.startupTimes.website} target="_blank" rel="noreferrer" aria-label="Startup Times website" data-testid="footer-st-web" className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-[#F5A623] hover:border-[#F5A623] transition-colors">
+                <Globe className="h-4 w-4" />
+              </a>
+              <a href={LEGAL.startupTimes.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" data-testid="footer-st-instagram" className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-[#F5A623] hover:border-[#F5A623] transition-colors">
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a href={LEGAL.startupTimes.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" data-testid="footer-st-linkedin" className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-[#F5A623] hover:border-[#F5A623] transition-colors">
+                <Linkedin className="h-4 w-4" />
+              </a>
+            </div>
           </div>
 
           <div>
@@ -29,11 +45,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-sm">
               {NAV_LINKS.map((l) => (
                 <li key={l.to}>
-                  <Link
-                    to={l.to}
-                    data-testid={`footer-nav-${l.label.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="text-slate-400 hover:text-[#F5A623] transition-colors"
-                  >
+                  <Link to={l.to} className="text-slate-400 hover:text-[#F5A623] transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -57,7 +69,7 @@ export function Footer() {
               ))}
               <li>
                 <Link to="/apply" className="text-slate-400 hover:text-[#F5A623] transition-colors">
-                  Apply for Exam
+                  Apply Now
                 </Link>
               </li>
             </ul>

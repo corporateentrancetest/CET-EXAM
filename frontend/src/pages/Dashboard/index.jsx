@@ -102,8 +102,8 @@ export default function DashboardPage() {
                     <span className="font-semibold text-slate-900">{app?.academic?.college || "—"}</span>
                   </div>
                   <div className="flex justify-between border-b border-slate-100 py-2">
-                    <span className="text-slate-500">Exam City</span>
-                    <span className="font-semibold text-slate-900">{app?.preferences?.examCity || "—"}</span>
+                    <span className="text-slate-500">Exam Shift</span>
+                    <span className="font-semibold text-slate-900">{app?.preferences?.examShift || "—"}</span>
                   </div>
                 </div>
               </div>

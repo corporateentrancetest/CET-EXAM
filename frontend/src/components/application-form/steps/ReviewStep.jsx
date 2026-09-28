@@ -51,8 +51,8 @@ export function ReviewStep({ application }) {
         </div>
         <div className="rounded-xl border border-slate-200 p-5">
           <h3 className="font-heading font-bold text-slate-900 mb-2">Preferences</h3>
-          <Row label="Exam City" value={pr.examCity} />
-          <Row label="Interview" value={pr.interviewMode} />
+          <Row label="Exam Shift" value={pr.examShift} />
+          <Row label="Interview" value={pr.interviewMode || "Virtual"} />
           <Row label="Interest" value={pr.careerInterest} />
         </div>
       </div>

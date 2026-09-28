@@ -13,8 +13,8 @@ export default function DubaiExperiencePage() {
       <PageHero
         eyebrow={DUBAI.eyebrow}
         title={DUBAI.heading}
-        subtitle="A fully-sponsored, 5-night, 6-day corporate immersion program in Dubai — reserved for the top 100 performers of the Corporate Launch Program."
-        image="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600"
+        subtitle="A fully-sponsored, 5-night, 6-day corporate immersion program in Dubai — reserved for the top 20 performers of the Corporate Launch Program."
+        image={DUBAI.gallery[0].url}
       />
 
       <section className="bg-white py-16 sm:py-20">
@@ -23,6 +23,31 @@ export default function DubaiExperiencePage() {
         </div>
       </section>
 
+      {/* Photo gallery */}
+      <section className="bg-slate-950 py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading eyebrow="A Glimpse of Dubai" title="Where Careers Go Global" dark />
+          <div className="mt-12 grid grid-cols-2 lg:grid-cols-3 gap-4">
+            {DUBAI.gallery.map((img, i) => (
+              <div
+                key={i}
+                className={`group relative overflow-hidden rounded-xl border border-white/10 ${i === 0 ? "col-span-2 lg:col-span-2 lg:row-span-2" : ""}`}
+                data-testid={`dubai-gallery-${i}`}
+              >
+                <img
+                  src={img.url}
+                  alt={img.caption}
+                  className={`w-full object-cover transition-transform duration-500 group-hover:scale-105 ${i === 0 ? "h-64 lg:h-full" : "h-40 lg:h-48"}`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
+                <span className="absolute bottom-3 left-4 text-sm font-semibold text-white">{img.caption}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Inclusions */}
       <section className="bg-slate-50/60 py-16 sm:py-20 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Inclusions" title="What's Included" />
@@ -40,7 +65,6 @@ export default function DubaiExperiencePage() {
               );
             })}
           </div>
-          <p className="mt-6 text-sm text-slate-400 italic">{DUBAI.placeholder}</p>
         </div>
       </section>
 

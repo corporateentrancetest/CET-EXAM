@@ -17,9 +17,9 @@ export function FounderTeaser() {
           >
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
               <img
-                src="https://images.unsplash.com/photo-1723990720514-65968a7d517b?crop=entropy&cs=srgb&fm=jpg&q=85&w=900"
+                src={FOUNDER.photo}
                 alt={FOUNDER.name}
-                className="w-full h-[360px] object-cover"
+                className="w-full h-[360px] object-cover object-top"
               />
             </div>
           </motion.div>

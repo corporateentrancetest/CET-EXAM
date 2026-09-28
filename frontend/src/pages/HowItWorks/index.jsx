@@ -36,7 +36,6 @@ export default function HowItWorksPage() {
                     ))}
                   </ul>
                 )}
-                {stage.note && <p className="mt-3 text-xs text-slate-400 italic">{stage.note}</p>}
               </div>
             </div>
           ))}
@@ -46,13 +45,20 @@ export default function HowItWorksPage() {
       {/* Exam pattern */}
       <section className="bg-slate-50/60 py-16 sm:py-20 border-y border-slate-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Exam Pattern" title="Written Examination Structure" />
-          <p className="mt-3 text-sm text-slate-400 italic">
-            Placeholder — confirm exact syllabus weightage with your assessment partner before publishing.
-          </p>
+          <SectionHeading eyebrow="Exam Pattern" title="Online Written Examination" subtitle="A single, one-hour online paper — 80 questions, four equally-weighted sections, with negative marking." />
+
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {s.examMeta.map(([k, v]) => (
+              <div key={k} className="rounded-xl border border-slate-200 bg-white p-4">
+                <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">{k}</div>
+                <div className="mt-1 font-heading font-bold text-slate-900">{v}</div>
+              </div>
+            ))}
+          </div>
+
           <div className="mt-8">
             <DataTable
-              columns={["Section", "Weightage", "Duration"]}
+              columns={["Section", "Questions", "Weightage", "Duration"]}
               rows={s.examPattern}
               testId="exam-pattern-table"
             />
@@ -66,12 +72,12 @@ export default function HowItWorksPage() {
           <SectionHeading eyebrow="Transparency" title={s.selection.heading} subtitle={s.selection.intro} />
           <div className="mt-10 grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="font-heading font-bold text-slate-900 mb-4">Shortlist of 5,000</h3>
+              <h3 className="font-heading font-bold text-slate-900 mb-4">Shortlist of 1,000</h3>
               <DataTable rows={s.selection.shortlist} testId="shortlist-criteria-table" />
             </div>
             <div>
-              <h3 className="font-heading font-bold text-slate-900 mb-4">Top 100 (Dubai) Selection</h3>
-              <DataTable rows={s.selection.top100} testId="top100-criteria-table" />
+              <h3 className="font-heading font-bold text-slate-900 mb-4">Top 20 (Dubai) Selection</h3>
+              <DataTable rows={s.selection.top20} testId="top20-criteria-table" />
             </div>
           </div>
           <p className="mt-6 text-sm text-slate-600 bg-amber-50 border border-amber-200 rounded-lg p-4">
