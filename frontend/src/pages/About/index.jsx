@@ -1,20 +1,35 @@
-import { CheckCircle2, Building2, Instagram, Linkedin } from "lucide-react";
+import { CheckCircle2, Instagram, Linkedin } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeading } from "@/components/common/SectionHeading";
+import { ImageSplit } from "@/components/common/ImageSplit";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
 import { Button } from "@/components/common/Button";
-import { ABOUT, FOUNDER, ASSETS, LEGAL } from "@/constants";
+import { ABOUT, FOUNDER, ASSETS, LEGAL, IMAGES } from "@/constants";
 
 export default function AboutPage() {
   return (
     <div data-testid="about-page">
-      <PageHero eyebrow={ABOUT.hero.eyebrow} title={ABOUT.hero.heading} subtitle={ABOUT.hero.body} />
+      <PageHero eyebrow={ABOUT.hero.eyebrow} title={ABOUT.hero.heading} subtitle={ABOUT.hero.body} image={IMAGES.capToss} />
 
       <section className="bg-white py-16 sm:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading title={ABOUT.mission.heading} subtitle={ABOUT.mission.body} />
         </div>
       </section>
+
+      <ImageSplit
+        reverse
+        eyebrow="Student Success"
+        title="Built for Every Graduate in India"
+        body="Whether you're from a metro university or a small-town college, CET levels the playing field with one transparent, national benchmark."
+        image={IMAGES.laptopStudy}
+        imageAlt="Student preparing online"
+        points={[
+          "Open to all recognized colleges & universities",
+          "Fully online — accessible from anywhere",
+          "Real rank, real report, real employer access",
+        ]}
+      />
 
       <section className="bg-slate-50/60 py-16 sm:py-20 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

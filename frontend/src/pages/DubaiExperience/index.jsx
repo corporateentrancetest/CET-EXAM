@@ -1,6 +1,7 @@
 import { Building2, MapPin, Users2, Globe2, Briefcase, CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeading } from "@/components/common/SectionHeading";
+import { Top20Criteria } from "@/components/common/Top20Criteria";
 import { Button } from "@/components/common/Button";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
 import { DUBAI } from "@/constants";
@@ -84,6 +85,8 @@ export default function DubaiExperiencePage() {
           </div>
         </div>
       </section>
+
+      <Top20Criteria />
 
       <ClosingCTA />
     </div>

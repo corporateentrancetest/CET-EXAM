@@ -2,8 +2,10 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
-import { BLOG } from "@/constants";
+import { BLOG, IMAGES } from "@/constants";
 import { cn } from "@/lib/utils";
+
+const POST_IMAGES = [IMAGES.laptopStudy, IMAGES.study2, IMAGES.networking, IMAGES.capToss2, IMAGES.graduatesRed];
 
 export default function BlogPage() {
   const [active, setActive] = useState("All");
@@ -43,8 +45,13 @@ export default function BlogPage() {
                 className="group flex flex-col rounded-xl border border-slate-200 bg-white overflow-hidden hover:border-[#F5A623] hover:shadow-md transition-colors"
                 data-testid={`blog-post-${i}`}
               >
-                <div className="h-40 bg-slate-900 relative overflow-hidden">
-                  <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_30%,#F5A623_0,transparent_55%)]" />
+                <div className="h-40 relative overflow-hidden">
+                  <img
+                    src={POST_IMAGES[i % POST_IMAGES.length]}
+                    alt=""
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
                   <span className="absolute bottom-3 left-4 text-[11px] font-bold uppercase tracking-widest text-[#F5A623]">
                     {p.category}
                   </span>

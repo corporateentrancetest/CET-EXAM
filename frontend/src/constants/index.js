@@ -27,6 +27,16 @@ export const ASSETS = {
     "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
 };
 
+export const IMAGES = {
+  graduatesRed: "https://images.unsplash.com/photo-1758270703733-3663d99c9dd7?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+  capToss: "https://images.unsplash.com/photo-1775623606627-597281856916?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+  capToss2: "https://images.unsplash.com/photo-1775623606597-9f677b8e1510?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+  onlineLearning: "https://images.unsplash.com/photo-1664575196044-195f135295df?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+  laptopStudy: "https://images.unsplash.com/photo-1598929214025-d6bb6167d43b?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+  study2: "https://images.unsplash.com/photo-1507206130118-b5907f817163?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+  networking: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+};
+
 export const SITE = {
   examFee: 250,
   applicationCloseDate: "2026-12-31T23:59:59+05:30",
@@ -204,6 +214,12 @@ export const HOW_IT_WORKS = {
     top20: [
       ["Corporate Launch Program Performance", "[__]%"],
       ["Employer Evaluations", "[__]%"],
+    ],
+    top20Criteria: [
+      { title: "Capstone Evaluation", weight: "40%", body: "The final, employer-assessed capstone project / assessment center — the single largest input to the Top 20 ranking." },
+      { title: "Continuous Employer Assessment", weight: "30%", body: "Ongoing scores assigned by participating employers throughout the 3-month program — module assignments, case studies, and live projects." },
+      { title: "Engagement & Professionalism", weight: "20%", body: "Attendance in live sessions, mentor office hours, participation, deadlines met, and workplace-conduct benchmarks." },
+      { title: "Mentor & Peer Reviews", weight: "10%", body: "Qualitative feedback from program mentors and structured peer/team evaluations." },
     ],
     note: "Shortlist weightage: 60% written / 40% interview. Top 20 selection is based separately on Corporate Launch Program performance and employer evaluations.",
   },

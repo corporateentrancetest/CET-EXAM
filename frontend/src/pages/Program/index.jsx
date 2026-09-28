@@ -2,8 +2,9 @@ import { CheckCircle2, Monitor, Award, GraduationCap, Briefcase, Plane } from "l
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { DataTable } from "@/components/common/DataTable";
+import { ImageSplit } from "@/components/common/ImageSplit";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
-import { PROGRAM } from "@/constants";
+import { PROGRAM, IMAGES } from "@/constants";
 
 const OUTCOME_ICONS = [GraduationCap, Briefcase, Award, CheckCircle2, Plane];
 
@@ -42,6 +43,20 @@ export default function ProgramPage() {
           </div>
         </div>
       </section>
+
+      <ImageSplit
+        reverse
+        eyebrow="Fully Online"
+        title="Learn Live. Grow Remotely."
+        body="Live sessions, recorded modules, mentor office hours, and continuous employer evaluation — all delivered online so you can train from anywhere."
+        image={IMAGES.study2}
+        imageAlt="Student learning online"
+        points={[
+          "Live + recorded sessions on your schedule",
+          "Mentor office hours and 1:1 guidance",
+          "Continuous employer assessment throughout",
+        ]}
+      />
 
       {/* Program format */}
       <section className="bg-slate-50/60 py-16 sm:py-20 border-y border-slate-200">

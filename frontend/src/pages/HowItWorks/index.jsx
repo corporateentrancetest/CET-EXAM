@@ -2,6 +2,7 @@ import { CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { DataTable } from "@/components/common/DataTable";
+import { Top20Criteria } from "@/components/common/Top20Criteria";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
 import { HOW_IT_WORKS } from "@/constants";
 
@@ -85,6 +86,8 @@ export default function HowItWorksPage() {
           </p>
         </div>
       </section>
+
+      <Top20Criteria />
 
       <ClosingCTA />
     </div>
