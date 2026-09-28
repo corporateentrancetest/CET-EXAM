@@ -1,0 +1,58 @@
+{
+  "summary": "Three independent backend/frontend runs completed successfully. Core candidate registration, duplicate protection, email/phone login, auth/me, draft autosave, payment gating and verification, post-payment document upload, submission prerequisites/success, admin authorization and admin workflows, all requested public routes, navigation/footer, FAQ/countdown/tables, candidate dashboard, full apply flow, and admin UI were checked and working. The merged defects are: malformed admin application IDs return 500, MongoDB identifiers are exposed in API responses, credentialed CORS reflects arbitrary origins, and authentication has no HttpOnly cookie or brute-force lockout. One referenced auth playbook file was absent from the workspace.",
+  "backend_issues": {
+    "critical": [
+      {
+        "title": "Malformed admin application ID returns HTTP 500",
+        "location": "GET/PATCH /api/admin/applications/:id",
+        "steps_to_reproduce": "Authenticate as the documented admin, then GET /api/admin/applications/not-a-valid-object-id and PATCH the same path/status with {\"status\":\"submitted\"}.",
+        "expected": "A malformed identifier should return a safe, consistent client error (400 or 404) rather than an internal server error.",
+        "actual": "GET returned HTTP 500 with a Mongoose CastError; the PATCH path uses the same unhandled ObjectId cast path and should be verified after the fix.",
+        "impact": "Normal invalid client input is treated as a server failure and leaks Mongoose/model details, polluting monitoring and weakening the API contract.",
+        "reported_priorities": {"r1": "minor", "r2": "critical", "r3": "minor"},
+        "found_by": ["run 1", "run 2", "run 3"]
+      },
+      {
+        "title": "CORS reflects arbitrary origins while credentials are enabled",
+        "location": "backend/src/app.js CORS middleware and backend/.env CORS_ORIGINS=\"*\"",
+        "steps_to_reproduce": "Send an API request with an arbitrary Origin header to the external API and inspect the response headers/configuration. The deployed configuration maps CORS_ORIGINS=\"*\" to cors({origin:true, credentials:true}).",
+        "expected": "Credentialed CORS should allow only explicit trusted frontend origin(s).",
+        "actual": "The wildcard configuration reflects the request origin and enables credentials for arbitrary origins.",
+        "impact": "Broadens cross-origin access and creates a security regression risk for authenticated APIs, especially if cookie authentication is introduced.",
+        "reported_priorities": {"r2": "critical", "r3": "minor"},
+        "found_by": ["run 2", "run 3"]
+      },
+      {
+        "title": "Authentication lacks HttpOnly cookie and brute-force lockout",
+        "location": "POST /api/auth/login and POST /api/auth/admin/login",
+        "steps_to_reproduce": "Inspect a successful login response, then submit five consecutive wrong candidate-password attempts followed by the correct password.",
+        "expected": "Authentication should set a secure HttpOnly cookie and throttle or lock the account after repeated failures, as required by the auth security checks.",
+        "actual": "The app returns JWTs in JSON for localStorage use, sets no application HttpOnly auth cookie, and accepts the correct login immediately after five consecutive 401 responses without a 429/lockout.",
+        "impact": "A localStorage token is exposed to XSS and unlimited credential guessing remains possible absent another perimeter control.",
+        "found_by": ["run 3"]
+      }
+    ],
+    "minor": [
+      {
+        "title": "MongoDB internal _id fields are exposed in application, admin, and payment responses",
+        "location": "GET/PATCH /api/applications/me, POST /api/applications/me/documents, POST /api/applications/me/submit, POST /api/payments/verify, GET/PATCH /api/admin/applications* and GET /api/admin/payments",
+        "steps_to_reproduce": "Register/authenticate a candidate and inspect application/payment JSON responses; authenticate as admin and inspect application list/detail/status and payments responses. Admin UI/API consumers must use row['_id'] for detail/status calls.",
+        "expected": "Responses should use explicit safe DTOs/projections, exposing only an intentional public id/applicationNumber and omitting raw persistence fields such as _id and __v.",
+        "actual": "Controllers return Mongoose application/payment documents directly, including raw Mongo/Mongoose identifiers and persistence shape.",
+        "impact": "Internal database identifiers are unnecessarily exposed and the frontend/API contract is coupled to Mongo/Mongoose document representation.",
+        "found_by": ["run 1", "run 2", "run 3"]
+      }
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "critical_code_review_comments": [],
+  "action_items": [],
+  "test_report_links": [],
+  "updated_files": [],
+  "retest_needed": true,
+  "should_main_agent_self_test": true
+}

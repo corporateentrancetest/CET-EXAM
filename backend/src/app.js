@@ -8,10 +8,13 @@ const env = require("./config/env");
 
 const app = express();
 
+// Auth uses stateless Bearer JWTs (not cookies), so credentialed CORS is not
+// required. We therefore do not reflect arbitrary origins WITH credentials.
+const allowAllOrigins = env.corsOrigins === "*";
 app.use(
   cors({
-    origin: env.corsOrigins === "*" ? true : env.corsOrigins.split(","),
-    credentials: true,
+    origin: allowAllOrigins ? true : env.corsOrigins.split(","),
+    credentials: !allowAllOrigins,
   })
 );
 app.use(express.json({ limit: "10mb" }));

@@ -5,6 +5,7 @@ const Application = require("../models/Application");
 const { generateToken } = require("../utils/generateToken");
 const generateApplicationNumber = require("../utils/generateApplicationNumber");
 const { ROLES, APPLICATION_STATUS } = require("../constants");
+const { assertNotLocked, recordFailure, clearAttempts } = require("../utils/bruteForce");
 const env = require("../config/env");
 
 /** Simple typed error that controllers translate into HTTP status codes. */
@@ -62,24 +63,41 @@ async function registerCandidate({ fullName, email, phone, password }) {
 /** Candidate login using email OR phone as the identifier. */
 async function loginCandidate({ identifier, password }) {
   const id = identifier.toLowerCase().trim();
+  await assertNotLocked(`cand:${id}`, ServiceError);
   const candidate = await Candidate.findOne({
     $or: [{ email: id }, { phone: identifier.trim() }],
   });
-  if (!candidate) throw new ServiceError(401, "No account found. Please check your details or apply first.");
+  if (!candidate) {
+    await recordFailure(`cand:${id}`);
+    throw new ServiceError(401, "No account found. Please check your details or apply first.");
+  }
 
   const ok = await bcrypt.compare(password, candidate.passwordHash);
-  if (!ok) throw new ServiceError(401, "Incorrect password. Please try again.");
+  if (!ok) {
+    await recordFailure(`cand:${id}`);
+    throw new ServiceError(401, "Incorrect password. Please try again.");
+  }
 
+  await clearAttempts(`cand:${id}`);
   const token = generateToken({ id: candidate._id.toString(), role: ROLES.CANDIDATE });
   return { token, candidate: candidate.toSafeJSON() };
 }
 
 /** Admin login (separate collection). */
 async function loginAdmin({ email, password }) {
+  const key = `admin:${email.toLowerCase().trim()}`;
+  await assertNotLocked(key, ServiceError);
   const admin = await Admin.findOne({ email: email.toLowerCase().trim() });
-  if (!admin) throw new ServiceError(401, "Invalid admin credentials.");
+  if (!admin) {
+    await recordFailure(key);
+    throw new ServiceError(401, "Invalid admin credentials.");
+  }
   const ok = await bcrypt.compare(password, admin.passwordHash);
-  if (!ok) throw new ServiceError(401, "Invalid admin credentials.");
+  if (!ok) {
+    await recordFailure(key);
+    throw new ServiceError(401, "Invalid admin credentials.");
+  }
+  await clearAttempts(key);
   const token = generateToken({ id: admin._id.toString(), role: ROLES.ADMIN });
   return { token, admin: admin.toSafeJSON() };
 }

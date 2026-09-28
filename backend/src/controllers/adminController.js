@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const Application = require("../models/Application");
 const Candidate = require("../models/Candidate");
 const Payment = require("../models/Payment");
@@ -79,6 +80,9 @@ async function listApplications(req, res, next) {
 /** GET /api/admin/applications/:id — single application detail. */
 async function getApplication(req, res, next) {
   try {
+    if (!mongoose.isValidObjectId(req.params.id)) {
+      return error(res, { statusCode: 400, message: "Invalid application id" });
+    }
     const application = await Application.findById(req.params.id).populate(
       "candidate",
       "fullName email phone createdAt"
@@ -93,6 +97,9 @@ async function getApplication(req, res, next) {
 /** PATCH /api/admin/applications/:id/status — update status. */
 async function updateStatus(req, res, next) {
   try {
+    if (!mongoose.isValidObjectId(req.params.id)) {
+      return error(res, { statusCode: 400, message: "Invalid application id" });
+    }
     const { status } = req.body;
     if (!Object.values(APPLICATION_STATUS).includes(status)) {
       return error(res, { statusCode: 400, message: "Invalid status value" });

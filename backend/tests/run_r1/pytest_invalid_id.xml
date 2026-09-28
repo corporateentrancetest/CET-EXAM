@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.743" timestamp="2026-09-28T08:52:32.142518+00:00" hostname="agent-env-ebb8d839-ad62-4c3f-8641-c42b058aae70"><testcase classname="tests.run_r1.backend_test.TestAdminAndAccess" name="test_invalid_application_id_returns_4xx" time="0.652"><failure message="assert 500 in (400, 404)&#10; +  where 500 = &lt;Response [500]&gt;.status_code">backend/tests/run_r1/backend_test.py:203: in test_invalid_application_id_returns_4xx
+    assert response.status_code in (400, 404)
+E   assert 500 in (400, 404)
+E    +  where 500 = &lt;Response [500]&gt;.status_code</failure></testcase></testsuite></testsuites>

@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="1.891" timestamp="2026-09-28T08:52:45.675329+00:00" hostname="agent-env-ebb8d839-ad62-4c3f-8641-c42b058aae70"><testcase classname="tests.run_r3.test_api" name="test_login_bruteforce_observation" time="1.297" /></testsuite></testsuites>
