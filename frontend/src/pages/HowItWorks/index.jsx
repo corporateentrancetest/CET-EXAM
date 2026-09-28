@@ -5,11 +5,13 @@ import { DataTable } from "@/components/common/DataTable";
 import { Top20Criteria } from "@/components/common/Top20Criteria";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
 import { HOW_IT_WORKS } from "@/constants";
+import { Seo } from "@/components/common/Seo";
 
 export default function HowItWorksPage() {
   const s = HOW_IT_WORKS;
   return (
     <div data-testid="how-it-works-page">
+      <Seo title="How It Works — Exam Pattern & Selection" path="/how-it-works" description="CET's six-stage process: online exam (80 questions, 1 hour, negative marking), virtual interviews, 60/40 shortlist of 1,000, and Top 20 Dubai selection based on employer & trainer evaluations." />
       <PageHero title={s.hero.heading} subtitle={s.hero.body} />
 
       {/* Stages */}

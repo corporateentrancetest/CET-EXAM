@@ -114,7 +114,8 @@ export default function DashboardPage() {
                   <Download className="h-6 w-6 text-amber-600" />
                   <h3 className="mt-3 font-heading font-bold text-slate-900">Admit Card</h3>
                   <p className="mt-1 text-sm text-slate-500">
-                    Available closer to the exam date (Jan 2027).
+                    Released on <span className="font-semibold text-slate-700">January 15, 2027</span>. Your
+                    admit card carries your exam login credentials for the online test on January 31, 2027.
                   </p>
                   <Button
                     variant="outline"
@@ -124,7 +125,7 @@ export default function DashboardPage() {
                     data-testid="dashboard-admit-card-btn"
                     onClick={() => {}}
                   >
-                    {submitted ? "Download (soon)" : "Submit application first"}
+                    {submitted ? "Available Jan 15, 2027" : "Submit application first"}
                   </Button>
                 </div>
                 <div className="rounded-2xl bg-white border border-slate-200 p-6">

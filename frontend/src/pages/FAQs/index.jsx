@@ -2,10 +2,12 @@ import { PageHero } from "@/components/common/PageHero";
 import { FaqAccordion } from "@/components/common/FaqAccordion";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
 import { LEGAL, FAQS } from "@/constants";
+import { Seo } from "@/components/common/Seo";
 
 export default function FAQsPage() {
   return (
     <div data-testid="faqs-page">
+      <Seo title="FAQs" path="/faqs" description="Answers to common questions about CET 2027 — eligibility, ₹250 fee, exam pattern, key dates, selection of the top 1,000 and top 20, and the Dubai Global Experience." />
       <PageHero
         title="Frequently Asked Questions"
         subtitle="Everything you need to know about CET 2027 — eligibility, fees, dates, results, and the Dubai Global Experience."

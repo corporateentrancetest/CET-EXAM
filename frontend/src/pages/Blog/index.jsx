@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
 import { BLOG, IMAGES } from "@/constants";
+import { Seo } from "@/components/common/Seo";
 import { cn } from "@/lib/utils";
 
 const POST_IMAGES = [IMAGES.laptopStudy, IMAGES.study2, IMAGES.networking, IMAGES.capToss2, IMAGES.graduatesRed];
@@ -14,6 +15,7 @@ export default function BlogPage() {
 
   return (
     <div data-testid="blog-page">
+      <Seo title="Blog & Insights" path="/blog" description="Career readiness, employer expectations, exam preparation, and stories from the CET community." />
       <PageHero title={BLOG.hero.heading} subtitle={BLOG.hero.body} />
 
       <section className="bg-white py-16 sm:py-20">

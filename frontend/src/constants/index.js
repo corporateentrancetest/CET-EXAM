@@ -28,13 +28,13 @@ export const ASSETS = {
 };
 
 export const IMAGES = {
-  graduatesRed: "https://images.unsplash.com/photo-1758270703733-3663d99c9dd7?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-  capToss: "https://images.unsplash.com/photo-1775623606627-597281856916?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-  capToss2: "https://images.unsplash.com/photo-1775623606597-9f677b8e1510?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-  onlineLearning: "https://images.unsplash.com/photo-1664575196044-195f135295df?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-  laptopStudy: "https://images.unsplash.com/photo-1598929214025-d6bb6167d43b?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-  study2: "https://images.unsplash.com/photo-1507206130118-b5907f817163?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-  networking: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+  graduatesRed: "https://static.prod-images.emergentagent.com/jobs/465b9496-4539-488c-85f4-478366c7c0e4/images/d50d2c52b5bad49fcc4af9b8361cc1175898e9b381a8533db06090cb108f1f9c.jpeg",
+  capToss: "https://static.prod-images.emergentagent.com/jobs/465b9496-4539-488c-85f4-478366c7c0e4/images/514045a065e9cc7330166ed032e059f0da22487d593f9a1fdee9b9a4983e56f0.jpeg",
+  capToss2: "https://static.prod-images.emergentagent.com/jobs/465b9496-4539-488c-85f4-478366c7c0e4/images/d50d2c52b5bad49fcc4af9b8361cc1175898e9b381a8533db06090cb108f1f9c.jpeg",
+  onlineLearning: "https://static.prod-images.emergentagent.com/jobs/465b9496-4539-488c-85f4-478366c7c0e4/images/fb666feedcb23a09df5d5e82001223b0e53bfc9209e7722f5139b67274d2d755.jpeg",
+  laptopStudy: "https://static.prod-images.emergentagent.com/jobs/465b9496-4539-488c-85f4-478366c7c0e4/images/8d353cb795a72ec7ceb2a32975a3ec8ca64ea721d789bcbbfe48c6508a861c87.jpeg",
+  study2: "https://static.prod-images.emergentagent.com/jobs/465b9496-4539-488c-85f4-478366c7c0e4/images/f28bbbec7e15d19775b446c55f294ecf6a1aec8d4fc2e92fecab05f62fabca28.jpeg",
+  networking: "https://static.prod-images.emergentagent.com/jobs/465b9496-4539-488c-85f4-478366c7c0e4/images/8d353cb795a72ec7ceb2a32975a3ec8ca64ea721d789bcbbfe48c6508a861c87.jpeg",
 };
 
 export const SITE = {
@@ -97,6 +97,7 @@ export const JOURNEY_STEPS = [
 export const KEY_DATES = [
   ["Application Opens", "October 1, 2026"],
   ["Application Closes", "December 31, 2026"],
+  ["Admit Card Released (with exam login)", "January 15, 2027"],
   ["Online Written Examination", "January 31, 2027"],
   ["Interviews (Virtual)", "March 1 – March 31, 2027"],
   ["Final Shortlist Result", "April 15, 2027"],
@@ -143,13 +144,10 @@ export const FOUNDER = {
   heading: "Why We Built CET",
   teaser: "India produces more graduates every year than almost any country on earth — but very few platforms are built to tell them, objectively, where they stand and where they can go. CET exists to close that gap.",
   name: "Sarfraz Khan",
-  role: "Founder, CET",
-  photo: ASSETS.founderPhoto,
-  bio: "Sarfraz Khan is the Founder & CEO of Devobyte OPC Private Limited, a digital marketing and web development agency with offices in Greater Noida/Delhi and Dubai, and the Founder of Startup Times — a multi-publication entrepreneurship media network spanning INC91, Business Press, and Gulf Times, alongside the Founderbaaz podcast. He holds a BSc in Mathematics from Delhi University and studied entrepreneurship at the Department of Management Studies, IIT Delhi. Earlier in his journey, he was selected for the National Defence Academy with an All India Rank of 148 after completing the 12th grade.",
-  vision: [
+  role: "Founder of Startup Times",
+  message: [
     "India produces more graduates every year than almost any country on earth — but very few platforms are built to tell them, objectively, where they stand and where they can go. Most students find out whether they're 'corporate ready' only after they've already applied to dozens of jobs and been rejected by most of them. That feedback loop is too slow, too private, and too unfair to students from colleges without strong placement cells.",
     "CET was built to change that. It gives every student — regardless of college, city, or network — a national rank, a real readiness report, and a direct line to employers who are actually hiring. The students who rise to the top don't just get a certificate; they get three months of real training, real mentorship, and for the top 20, a fully-sponsored trip to Dubai to see what a global career can actually look like.",
-    "This is the platform I wish existed when I was graduating. My own path went through Delhi University, IIT Delhi's Department of Management Studies, and even a brief detour toward the National Defence Academy — and at every stage, what mattered most wasn't where I started, but whether someone gave me a fair, transparent way to prove what I could do. CET is my attempt to build that for thousands of students at once.",
   ],
 };
 
@@ -216,12 +214,12 @@ export const HOW_IT_WORKS = {
       ["Employer Evaluations", "[__]%"],
     ],
     top20Criteria: [
-      { title: "Capstone Evaluation", weight: "40%", body: "The final, employer-assessed capstone project / assessment center — the single largest input to the Top 20 ranking." },
-      { title: "Continuous Employer Assessment", weight: "30%", body: "Ongoing scores assigned by participating employers throughout the 3-month program — module assignments, case studies, and live projects." },
-      { title: "Engagement & Professionalism", weight: "20%", body: "Attendance in live sessions, mentor office hours, participation, deadlines met, and workplace-conduct benchmarks." },
-      { title: "Mentor & Peer Reviews", weight: "10%", body: "Qualitative feedback from program mentors and structured peer/team evaluations." },
+      { title: "Employer Evaluation Score", weight: "40%", body: "Scores assigned by participating employers across module assignments, live projects, and the capstone assessment center throughout the program." },
+      { title: "Trainer Evaluation Score", weight: "30%", body: "Assessments from CET program trainers and mentors on skills, improvement, assignment quality, and readiness across the 9 modules." },
+      { title: "Attendance & Participation", weight: "20%", body: "Consistent attendance in live sessions and mentor office hours, plus active participation in group discussions and activities." },
+      { title: "Dedication & Professionalism", weight: "10%", body: "Deadlines met, initiative, discipline, and workplace-conduct benchmarks demonstrated throughout the 3-month program." },
     ],
-    note: "Shortlist weightage: 60% written / 40% interview. Top 20 selection is based separately on Corporate Launch Program performance and employer evaluations.",
+    note: "Entry to the Corporate Launch Program (top 1,000) is based on the exam + interview (60% / 40%). The Top 20 for Dubai are then ranked purely on program performance — employer and trainer evaluation scores combined with attendance and dedication.",
   },
 };
 

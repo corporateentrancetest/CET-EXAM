@@ -1,10 +1,12 @@
 import { Mail, MapPin, Building2 } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
+import { Seo } from "@/components/common/Seo";
 import { LEGAL } from "@/constants";
 
 export default function ContactPage() {
   return (
     <div data-testid="contact-page">
+      <Seo title="Contact Us" path="/contact" description="Contact CET support, operated by Devobyte OPC Private Limited. Email help@corporateentrancetest.com for queries about applications, payments, or partnerships." />
       <PageHero
         eyebrow="Get In Touch"
         title="Contact Us"

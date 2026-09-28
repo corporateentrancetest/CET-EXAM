@@ -1,53 +1,29 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { Button } from "@/components/common/Button";
-import { FOUNDER } from "@/constants";
+import { FOUNDER, ASSETS } from "@/constants";
 
 export function FounderTeaser() {
   return (
-    <section className="bg-white py-16 sm:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
-          <motion.div
-            className="lg:col-span-5"
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
-              <img
-                src={FOUNDER.photo}
-                alt={FOUNDER.name}
-                className="w-full h-[360px] object-cover object-top"
-              />
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="lg:col-span-7"
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <div className="text-xs font-bold uppercase tracking-widest text-amber-600 mb-3">
-              {FOUNDER.eyebrow}
-            </div>
-            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900">
-              {FOUNDER.heading}
-            </h2>
-            <Quote className="h-8 w-8 text-[#F5A623] mt-6" />
-            <p className="mt-3 text-lg text-slate-700 leading-relaxed italic">"{FOUNDER.teaser}"</p>
-            <p className="mt-5 font-semibold text-slate-900">
-              — {FOUNDER.name}, <span className="text-slate-500 font-normal">{FOUNDER.role}</span>
-            </p>
-            <div className="mt-6">
-              <Button to="/about" variant="outline" data-testid="founder-read-more-btn">
-                Read the Full Vision
-              </Button>
-            </div>
-          </motion.div>
+    <section className="relative bg-slate-950 text-white overflow-hidden py-16 sm:py-20">
+      <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_75%_30%,#F5A623_0,transparent_45%)]" />
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="text-xs font-bold uppercase tracking-widest text-[#F5A623] mb-4">
+          {FOUNDER.eyebrow}
+        </div>
+        <Quote className="h-9 w-9 text-[#F5A623] mx-auto" />
+        <blockquote className="mt-5 font-heading text-xl sm:text-2xl lg:text-[28px] font-semibold leading-snug text-white">
+          "{FOUNDER.teaser}"
+        </blockquote>
+        <div className="mt-6 flex flex-col items-center gap-2">
+          <img src={ASSETS.startupTimesLogo} alt="Startup Times" className="h-6 w-auto" />
+          <p className="font-semibold text-white">{FOUNDER.name}</p>
+          <p className="text-sm text-[#F5A623]">{FOUNDER.role}</p>
+        </div>
+        <div className="mt-8">
+          <Button to="/about" variant="ghostLight" data-testid="founder-read-more-btn">
+            Read the Full Message
+          </Button>
         </div>
       </div>
     </section>

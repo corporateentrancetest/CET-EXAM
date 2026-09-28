@@ -10,10 +10,12 @@ import { SectionHeading } from "@/components/common/SectionHeading";
 import { ImageSplit } from "@/components/common/ImageSplit";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
 import { FAQS, IMAGES } from "@/constants";
+import { Seo } from "@/components/common/Seo";
 
 export default function HomePage() {
   return (
     <div data-testid="home-page">
+      <Seo path="/" />
       <Hero />
       <StatsBar />
       <EmployerNetwork />

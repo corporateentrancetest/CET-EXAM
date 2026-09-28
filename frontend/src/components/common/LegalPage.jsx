@@ -1,9 +1,11 @@
 import { PageHero } from "@/components/common/PageHero";
+import { Seo } from "@/components/common/Seo";
 
 /** Shared typographic wrapper for legal/policy pages. */
 export function LegalPage({ title, subtitle, testId, sections }) {
   return (
     <div data-testid={testId}>
+      <Seo title={title} description={subtitle} />
       <PageHero title={title} subtitle={subtitle} />
       <section className="bg-white py-16 sm:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">

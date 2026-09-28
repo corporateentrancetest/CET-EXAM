@@ -5,12 +5,14 @@ import { Top20Criteria } from "@/components/common/Top20Criteria";
 import { Button } from "@/components/common/Button";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
 import { DUBAI } from "@/constants";
+import { Seo } from "@/components/common/Seo";
 
 const ICONS = [Building2, Users2, Briefcase, MapPin, Globe2];
 
 export default function DubaiExperiencePage() {
   return (
     <div data-testid="dubai-experience-page">
+      <Seo title="Dubai Global Experience" path="/dubai-experience" description="The top 20 CET performers earn a fully-sponsored 5-night, 6-day corporate immersion program in Dubai — corporate visits, global leaders, workshops, and networking." />
       <PageHero
         eyebrow={DUBAI.eyebrow}
         title={DUBAI.heading}

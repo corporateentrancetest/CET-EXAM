@@ -5,12 +5,14 @@ import { DataTable } from "@/components/common/DataTable";
 import { ImageSplit } from "@/components/common/ImageSplit";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
 import { PROGRAM, IMAGES } from "@/constants";
+import { Seo } from "@/components/common/Seo";
 
 const OUTCOME_ICONS = [GraduationCap, Briefcase, Award, CheckCircle2, Plane];
 
 export default function ProgramPage() {
   return (
     <div data-testid="program-page">
+      <Seo title="Corporate Launch Program" path="/program" description="The Corporate Launch Program: a 3-month, 100% online, fully-sponsored training & mentorship program for the top 1,000 — with 9 modules, an Internship Certificate, and Top 20 selection for Dubai." />
       <PageHero
         eyebrow={PROGRAM.hero.eyebrow}
         title={PROGRAM.hero.heading}

@@ -5,10 +5,12 @@ import { ImageSplit } from "@/components/common/ImageSplit";
 import { ClosingCTA } from "@/components/common/ClosingCTA";
 import { Button } from "@/components/common/Button";
 import { ABOUT, FOUNDER, ASSETS, LEGAL, IMAGES } from "@/constants";
+import { Seo } from "@/components/common/Seo";
 
 export default function AboutPage() {
   return (
     <div data-testid="about-page">
+      <Seo title="About CET" path="/about" description="Learn about CET — a national corporate-readiness exam by Startup Times, operated by Devobyte OPC Private Limited, building a merit-based bridge from Indian campuses to the corporate world." />
       <PageHero eyebrow={ABOUT.hero.eyebrow} title={ABOUT.hero.heading} subtitle={ABOUT.hero.body} image={IMAGES.capToss} />
 
       <section className="bg-white py-16 sm:py-20">
@@ -49,38 +51,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder's Vision */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4">
-            <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm sticky top-28">
-              <img
-                src={FOUNDER.photo}
-                alt={FOUNDER.name}
-                className="w-full h-[380px] object-cover object-top"
-              />
-              <div className="p-5 bg-slate-900 text-white">
-                <div className="font-heading font-bold text-lg">{FOUNDER.name}</div>
-                <div className="text-sm text-[#F5A623]">{FOUNDER.role}</div>
-              </div>
-            </div>
+      {/* Founder's Message */}
+      <section className="relative bg-slate-950 text-white overflow-hidden py-16 sm:py-20">
+        <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_25%_30%,#F5A623_0,transparent_45%)]" />
+        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-xs font-bold uppercase tracking-widest text-[#F5A623] mb-3 text-center">
+            {FOUNDER.eyebrow}
           </div>
-          <div className="lg:col-span-8">
-            <div className="text-xs font-bold uppercase tracking-widest text-amber-600 mb-3">
-              {FOUNDER.eyebrow}
-            </div>
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900">
-              A Message From the Founder
-            </h2>
-            <p className="mt-5 text-sm text-slate-500 leading-relaxed">{FOUNDER.bio}</p>
-            <div className="mt-6 space-y-4 border-l-2 border-[#F5A623] pl-6">
-              {FOUNDER.vision.map((p, i) => (
-                <p key={i} className="text-base text-slate-700 leading-relaxed italic">
-                  {p}
-                </p>
-              ))}
-              <p className="font-semibold text-slate-900 not-italic">— {FOUNDER.name}, {FOUNDER.role}</p>
-            </div>
+          <h2 className="font-heading text-2xl sm:text-3xl font-bold text-white text-center">
+            {FOUNDER.heading}
+          </h2>
+          <div className="mt-8 space-y-5 border-l-2 border-[#F5A623] pl-5 sm:pl-6">
+            {FOUNDER.message.map((p, i) => (
+              <p key={i} className="text-base sm:text-lg text-slate-200 leading-relaxed italic">
+                {p}
+              </p>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col items-center gap-2 text-center">
+            <img src={ASSETS.startupTimesLogo} alt="Startup Times" className="h-7 w-auto" />
+            <p className="font-semibold text-white">— {FOUNDER.name}</p>
+            <p className="text-sm text-[#F5A623]">{FOUNDER.role}</p>
           </div>
         </div>
       </section>

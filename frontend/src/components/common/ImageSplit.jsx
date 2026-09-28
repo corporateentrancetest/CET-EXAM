@@ -5,7 +5,7 @@ import { CheckCircle2 } from "lucide-react";
 /** Modern image + text split section used across pages. */
 export function ImageSplit({ eyebrow, title, body, image, imageAlt = "", points = [], dark = false, reverse = false, testId }) {
   return (
-    <section className={dark ? "bg-slate-950 text-white py-16 sm:py-20" : "bg-white py-16 sm:py-20"} data-testid={testId}>
+    <section className={`overflow-hidden ${dark ? "bg-slate-950 text-white py-16 sm:py-20" : "bg-white py-16 sm:py-20"}`} data-testid={testId}>
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
         <motion.div
           initial={{ opacity: 0, x: reverse ? 24 : -24 }}
