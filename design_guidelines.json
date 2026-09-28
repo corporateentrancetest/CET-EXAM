@@ -1,0 +1,279 @@
+{
+  "project_overview": {
+    "name": "CET - Corporate Entrance Test by Startup Times",
+    "description": "Official national entrance examination platform for Indian college final-year students and recent graduates. Designed to feel like a high-credibility national examination body (UPSC/CAT style trust) rather than a startup landing page.",
+    "target_audience": "Final-year undergraduate students, recent post-graduates, entry-level job seekers, corporate recruiters, and examination administrators across India.",
+    "app_type": "hybrid_fullstack"
+  },
+  "brand_identity": {
+    "visual_tone": "Authoritative, Official, National-Scale Credibility, Editorial Precision, Corporate Trust.",
+    "anti_patterns": [
+      "No playful startup illustrations or bouncy 3D cartoon avatars",
+      "No bright rainbow gradients or neon glowing cards",
+      "No center-aligned hero block with centered text everywhere",
+      "No transparent headers without backdrop blur or proper contrast over scrollable content",
+      "No default Inter for main section titles without proper weight and tracking"
+    ],
+    "core_principles": [
+      "UPSC / CAT / NTA Level Trust: Solid borders, structured data tables, clear exam schedules, official notice badges.",
+      "Dual Theme Structure: Clean crisp white/off-white background for information sections, and deep rich navy (#0F172A / #0A1128) for header, hero, and special spotlight sections (Dubai Global Experience, Closing CTA, Admin Navbar).",
+      "Single Accent Focus: Warm Amber / Gold (#F5A623) strictly used for CTAs, step active indicators, key callouts, and urgency badges.",
+      "Data Density with Breathers: High readability tables, clear timeline steps, generous card padding (p-6 to p-8), clear grid hierarchy."
+    ]
+  },
+  "colors": {
+    "background": {
+      "main": "#FFFFFF",
+      "subtle": "#F8FAFC",
+      "card": "#FFFFFF",
+      "dark_section": "#0F172A",
+      "dark_section_accent": "#0A1128",
+      "notice_bg": "#FFFBEB"
+    },
+    "text": {
+      "primary": "#0F172A",
+      "secondary": "#475569",
+      "muted": "#64748B",
+      "on_dark_primary": "#FFFFFF",
+      "on_dark_secondary": "#94A3B8",
+      "accent": "#D97706"
+    },
+    "brand_accent": {
+      "amber_primary": "#F5A623",
+      "amber_hover": "#E09212",
+      "amber_light": "#FEF3C7",
+      "amber_border": "#FCD34D"
+    },
+    "borders": {
+      "subtle": "#E2E8F0",
+      "medium": "#CBD5E1",
+      "dark_mode": "rgba(255, 255, 255, 0.12)",
+      "accent": "#F5A623"
+    },
+    "status": {
+      "success": "#16A34A",
+      "warning": "#D97706",
+      "error": "#DC2626",
+      "info": "#2563EB"
+    }
+  },
+  "typography": {
+    "font_family_heading": "'Plus Jakarta Sans', 'Outfit', system-ui, sans-serif",
+    "font_family_body": "'Inter', system-ui, sans-serif",
+    "font_family_mono": "'JetBrains Mono', monospace",
+    "scale": {
+      "hero_title": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight",
+      "section_h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900",
+      "section_h3": "text-xl sm:text-2xl font-semibold tracking-snug text-slate-900",
+      "card_title": "text-lg font-bold text-slate-900",
+      "body_lead": "text-lg text-slate-600 leading-relaxed",
+      "body_regular": "text-base text-slate-600 leading-normal",
+      "caption": "text-sm text-slate-500",
+      "badge": "text-xs font-semibold uppercase tracking-wider"
+    }
+  },
+  "spacing_and_layout": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-16 sm:py-20 lg:py-24",
+    "grid_gap": "gap-6 lg:gap-8",
+    "bento_hero": "grid grid-cols-1 lg:grid-cols-12 gap-8 items-center",
+    "stats_bar": "grid grid-cols-2 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-slate-200 border-y border-slate-200 py-6 bg-slate-50/50"
+  },
+  "component_styles": {
+    "navigation": {
+      "container": "sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 text-white",
+      "top_announcement_bar": "bg-[#F5A623] text-slate-950 font-medium text-xs py-1.5 px-4 text-center tracking-wide flex items-center justify-center gap-2",
+      "logo_area": "flex items-center gap-3 font-bold text-lg text-white tracking-tight",
+      "nav_links": "hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300 hover:text-white transition-colors",
+      "cta_buttons": "flex items-center space-x-3",
+      "apply_btn": "bg-[#F5A623] hover:bg-[#E09212] text-slate-950 font-bold px-5 py-2.5 rounded-md transition-all shadow-sm hover:shadow text-sm"
+    },
+    "hero_section": {
+      "wrapper": "relative bg-slate-900 text-white py-16 lg:py-24 overflow-hidden border-b border-slate-800",
+      "badge": "inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-amber-500/10 text-[#F5A623] border border-amber-500/20 mb-6",
+      "heading": "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6",
+      "subheading": "text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed mb-8",
+      "feature_pills": "flex flex-wrap gap-4 text-sm font-medium text-slate-300"
+    },
+    "horizontal_stats_bar": {
+      "wrapper": "bg-white border-b border-slate-200 py-8 shadow-xs",
+      "item": "flex flex-col items-center justify-center p-4 text-center",
+      "value": "text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight",
+      "label": "text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1"
+    },
+    "process_timeline_6steps": {
+      "wrapper": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 relative",
+      "step_card": "bg-white border border-slate-200 rounded-lg p-5 relative hover:border-[#F5A623] transition-all hover:shadow-md group flex flex-col justify-between h-full",
+      "step_number": "w-8 h-8 rounded-full bg-slate-900 text-[#F5A623] font-bold text-sm flex items-center justify-center mb-4 group-hover:bg-[#F5A623] group-hover:text-slate-900 transition-colors"
+    },
+    "dubai_experience_section": {
+      "wrapper": "bg-slate-950 text-white py-20 border-y border-slate-800 relative overflow-hidden",
+      "accent_pill": "bg-amber-500/20 border border-[#F5A623] text-[#F5A623] text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full inline-block mb-4",
+      "grid": "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+    },
+    "data_tables": {
+      "wrapper": "border border-slate-200 rounded-lg overflow-hidden bg-white shadow-xs",
+      "header": "bg-slate-900 text-white text-xs font-bold uppercase tracking-wider",
+      "th": "px-6 py-4 text-left font-semibold text-slate-200 border-b border-slate-800",
+      "td": "px-6 py-4 text-sm text-slate-700 border-b border-slate-100",
+      "row_even": "bg-slate-50/50"
+    },
+    "accordion": {
+      "item": "border-b border-slate-200 py-4",
+      "trigger": "text-left font-bold text-slate-900 hover:text-amber-600 text-lg transition-colors flex justify-between items-center w-full py-2",
+      "content": "text-slate-600 text-base leading-relaxed pt-2 pb-4"
+    },
+    "forms": {
+      "input": "w-full px-4 py-2.5 rounded-md border border-slate-300 focus:border-[#F5A623] focus:ring-2 focus:ring-amber-500/20 text-slate-900 placeholder:text-slate-400 text-sm outline-none transition-all",
+      "label": "block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5",
+      "select": "w-full px-4 py-2.5 rounded-md border border-slate-300 focus:border-[#F5A623] focus:ring-2 focus:ring-amber-500/20 text-slate-900 text-sm outline-none bg-white"
+    }
+  },
+  "image_urls": {
+    "hero_skyline": "https://images.unsplash.com/photo-1607414851776-f2fcc379fb48?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "dubai_skyline": "https://images.unsplash.com/photo-1652707228067-25672fa0b082?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "candidate_students": "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "founder_portrait": "https://images.unsplash.com/photo-1685375421073-4dae366f8e84?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "corporate_leaders": "https://images.unsplash.com/photo-1686434538659-bb72333a1054?crop=entropy&cs=srgb&fm=jpg&q=85"
+  },
+  "pages_blueprint": {
+    "home": {
+      "path": "/",
+      "sections": [
+        "Top Announcement Bar with Live Exam Countdown Timer",
+        "Sticky Navy Header with Logo, Nav items, Candidate Login, Apply Button",
+        "Official Hero Section (Title, Subhead, Official Badges, City Silhouette, Quick Exam Specs)",
+        "Horizontal 5-Metric Stat Bar (Total Candidates Registered, Corporate Partners, Dubai Immersion Seats, Exam Centers, Average CTC)",
+        "Employer Partner Network Credibility Row (Corporate logos & hiring companies)",
+        "6-Step Process Timeline ('Your Journey With CET')",
+        "Examination Fee Structure & Important Notice Table",
+        "Full-width Dark Navy Dubai Global Experience Spotlight Section",
+        "Founder's Note Teaser (Portrait, Quote, Mission by Startup Times)",
+        "FAQ Accordion Section with Category Filters",
+        "Closing CTA Dark Section with Quick Application Trigger",
+        "Official Footer with Quick Links, Contact Details, Governance Notice"
+      ]
+    },
+    "about": {
+      "path": "/about",
+      "sections": [
+        "Page Hero: Mission of CET & Startup Times Leadership",
+        "Governing Body & Examination Board Overview",
+        "Standardized Benchmark Matrix (Comparison with CAT / GATE / GRE)",
+        "National Examination Security & Integrity Protocol",
+        "Full Founder's Note & Executive Leadership Bios"
+      ]
+    },
+    "how_it_works": {
+      "path": "/how-it-works",
+      "sections": [
+        "Detailed Step-by-Step Candidate Journey",
+        "Eligibility Criteria & Document Checklist Table",
+        "Exam Day Guidelines & Proctored Test Instructions",
+        "Merit Scoring & Corporate Matching Algorithm Explanation"
+      ]
+    },
+    "program": {
+      "path": "/program",
+      "sections": [
+        "Exam Pattern Breakdown (Sectional Timing, Weightage, Question Types)",
+        "Downloadable Sample Syllabus & Practice Test Notice",
+        "Sectional Deep-Dive Cards (Verbal, Quantitative, Technical, Logical)",
+        "Exam Fees, Fee Waiver Criteria & Refund Policy Table"
+      ]
+    },
+    "dubai_experience": {
+      "path": "/dubai-experience",
+      "sections": [
+        "Dark Navy Immersion Hero",
+        "Global Career Fast-Track & International Placement Pipeline",
+        "Dubai Corporate Residency Specs (Accommodation, Stipend, Visa Support)",
+        "Past Winner Cohorts & Global Testimonials"
+      ]
+    },
+    "employers": {
+      "path": "/employers",
+      "sections": [
+        "Recruiter Portal Teaser & Hire Verified Merit Talent CTA",
+        "Partner Employers Directory Grid",
+        "Campus Placement vs CET Hiring Comparison",
+        "Employer Registration Form Modal / Section"
+      ]
+    },
+    "faqs": {
+      "path": "/faqs",
+      "sections": [
+        "Searchable FAQ Directory with Category Tabs (Registration, Exam Pattern, Results, Dubai Immersion)",
+        "Helpdesk Contact Form & Official Support Helpline"
+      ]
+    },
+    "blog": {
+      "path": "/blog",
+      "sections": [
+        "Latest Announcements & Exam Prep Articles Grid",
+        "Category Filter Tags (Official Notices, Exam Strategy, Success Stories, Career Guidance)",
+        "Newsletter Subscription for Exam Alerts"
+      ]
+    },
+    "login": {
+      "path": "/login",
+      "sections": [
+        "Candidate & Portal Dual Tab Login (Candidate Login / Admin Login)",
+        "Registration Number / Mobile OTP / Password Login Form",
+        "Forgot Credentials Helpline Box"
+      ]
+    },
+    "apply": {
+      "path": "/apply",
+      "sections": [
+        "Multi-Step Candidate Application Form with Visual Stepper Indicator (Step 1: Personal Details, Step 2: Academic Info, Step 3: Exam Center Selection, Step 4: Document Upload, Step 5: Payment & Review)",
+        "Fee Payment Gateway Mock / Summary",
+        "Instant Application Receipt / Admit Card Preview Generation"
+      ]
+    },
+    "dashboard": {
+      "path": "/dashboard",
+      "sections": [
+        "Candidate Portal Welcome Header with Application Status Badge",
+        "Admit Card Download Card & Exam Center Locator",
+        "Mock Test Portal Launcher & Syllabus Progress",
+        "Profile & Academic Records Verification Table"
+      ]
+    },
+    "admin": {
+      "path": "/admin",
+      "sections": [
+        "Admin Examination Dashboard Metrics (Total Applicants, Paid Fees, Exam Center Allotment)",
+        "Interactive Filterable Applications Management Table with Status Modals",
+        "Exam Schedule & Center Management Panel",
+        "Announcement & Notice Publisher Tool"
+      ]
+    }
+  },
+  "instructions_to_main_agent": [
+    "Ensure all 9+ public pages (Home, About, How It Works, Program, Dubai Experience, Employers, FAQs, Blog, Login, Apply, Dashboard, Admin) are fully accessible via the top navigation or footer links.",
+    "Strictly follow the color palette: White/Off-white background for body sections, Deep Navy (#0F172A) for header, hero, Dubai section, closing CTA, and Amber (#F5A623) as the single vibrant action color.",
+    "Ensure responsiveness on mobile, tablet, and desktop.",
+    "All interactive elements (buttons, inputs, filters, tabs, links, table actions) MUST have explicit data-testid attributes in kebab-case format.",
+    "Use Lucide icons for all UI elements (ShieldCheck, Award, FileText, Globe, Calendar, CheckCircle2, Building2, User, ArrowRight, Download, Search, ChevronDown, Lock, Clock)."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) where appropriate.",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms.",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN.",
+    "Prioritize using pre-existing components from src/components/ui when applicable.",
+    "Create new components that match the style and conventions of existing components when needed.",
+    "Examine existing components to understand the project's component patterns before creating new ones.",
+    "Use sonner for toasts. Sonner component is located in /app/src/components/ui/sonner.jsx or /app/frontend/src/components/ui/sonner.jsx."
+  ]
+}
